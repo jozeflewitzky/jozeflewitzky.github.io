@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jozef Lewitzky | Content Writer</title>
+    <meta name="description" content="Professional content writer specializing in SEO blog posts, articles, and persuasive copy. 5+ years experience, Master's in Philosophy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fafaf9;
+            --surface: #ffffff;
+            --text: #1c1917;
+            --text-muted: #57534e;
+            --accent: #0c0a09;
+            --border: #e7e5e4;
+            --highlight: #f5f5f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Literata', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .hero {
+            padding: 5rem 0 4rem;
+            background: var(--surface);
+        }
+
+        .hero h1 {
+            font-family: 'Literata', serif;
+            font-size: clamp(2.25rem, 5vw, 3rem);
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: var(--highlight);
+            padding: 0.4rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+            margin-left: 0.75rem;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text);
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-family: 'Literata', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .sample-card {
+            background: var(--surface);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .sample-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .sample-content {
+            padding: 1.25rem;
+        }
+
+        .sample-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .sample-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .sample-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .reviews {
+            background: var(--surface);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            padding: 1.5rem;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            color: var(--text);
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        @media (max-width: 640px) {
+            .about {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .about h2 {
+            grid-column: 1 / -1;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Literata', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .contact {
+            background: var(--accent);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact .btn {
+            background: white;
+            color: var(--accent);
+        }
+
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        footer a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .fiverr-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--highlight);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Jozef Lewitzky</a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#samples">Work</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span class="tagline">5+ Years Experience • 389 Five-Star Reviews</span>
+            <h1>I write content that makes people actually read.</h1>
+            <p>Not "engaging" content. Not "compelling" content. Content that does the job—convinces, converts, clarifies. SEO-optimized but written for humans first.</p>
+            <a href="#contact" class="btn">Work With Me</a>
+            <a href="#samples" class="btn btn-outline">See My Work</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>What I Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Blog Posts & Articles</h3>
+                    <p>Long-form content that ranks, engages, and builds authority. Research-backed, SEO-structured, written to be read.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Landing Pages</h3>
+                    <p>Pages that convert. Clear value propositions, benefit-driven copy, and CTAs that actually get clicked.</p>
+                </div>
+                <div class="service-card">
+                    <h3>SEO Content</h3>
+                    <p>Strategic keyword integration that doesn't sound like it was written for robots. Rankings + readability.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Website Copy</h3>
+                    <p>Homepages, about pages, product descriptions. Whatever your site needs to say, I'll help it say it clearly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="samples" style="background: var(--surface);">
+        <div class="container">
+            <h2>Selected Work</h2>
+            <div class="samples-grid">
+                <div class="sample-card">
+                    <div class="sample-content">
+                        <div class="sample-tag">SaaS</div>
+                        <h3>Most Companies Don't Know How to Talk About What They Built</h3>
+                        <p>Why B2B content skips the most important step—and how to fix it. A piece about writing for the person, not the product.</p>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-content">
+                        <div class="sample-tag">Finance</div>
+                        <h3>The Ultimate Guide to Importing into Canada</h3>
+                        <p>Comprehensive guide covering regulations, tariffs, and logistics for businesses entering the Canadian market.</p>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-content">
+                        <div class="sample-tag">Real Estate</div>
+                        <h3>Landing Page - Stratford Real Estate</h3>
+                        <p>Persuasive landing page copy for a real estate agency, focusing on property value and location benefits.</p>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-content">
+                        <div class="sample-tag">Press Release</div>
+                        <h3>The Dog Room and Pen</h3>
+                        <p>Professional press release for a pet product launch, distributed to media outlets.</p>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-content">
+                        <div class="sample-tag">Lifestyle</div>
+                        <h3>7 Benefits of Moss Art</h3>
+                        <p>Engaging blog post exploring the trending interior design trend of preserved moss installations.</p>
+                    </div>
+                </div>
+                <div class="sample-card">
+                    <div class="sample-content">
+                        <div class="sample-tag">Automotive</div>
+                        <h3>How Important Is Your CSA Safety Score?</h3>
+                        <p>Informative article breaking down CSA safety scores for fleet managers and commercial drivers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="container">
+            <h2>What Clients Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"bravo, Jozef! We gave a tight turn around for delivery, and Jozef delivered ahead of schedule. He is reliable and proficient."</p>
+                    <p class="review-author">— icrea8, Repeat Client (US)</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"I totally recommend him."</p>
+                    <p class="review-author">— truebronzen, Repeat Client (Canada)</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Excellent work as always."</p>
+                    <p class="review-author">— missreise26, Repeat Client (US)</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Great work again, thanks Jozef!"</p>
+                    <p class="review-author">— markollerton, Repeat Client (Canada)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about">
+                <h2>About</h2>
+                <div class="about-text">
+                    <p>I've been writing professionally for over 5 years—first on Fiverr, where I've completed 389 projects with a perfect 5.0 rating, and now for direct clients too.</p>
+                    <p>My background is in Philosophy (Master's degree), which basically means I know how to construct an argument, spot logical fallacies, and make complex ideas accessible. These skills turn out to be exactly what good content writing requires.</p>
+                    <p>I don't write filler. No "unlock your potential" nonsense. I research, understand the subject, then write for the actual person who'll read it.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">389</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5.0</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <p>Have a project in mind? I'd love to hear about it.</p>
+            <a href="mailto:Jozef.Lewitzky@gmail.com" class="btn">Email Me</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="fiverr-badge">
+                <span>★★★★★</span>
+                <span>5.0 • 389 Reviews on Fiverr</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                <a href="https://www.fiverr.com/jozeflewitzky">Fiverr Profile</a> • 
+                <a href="https://www.linkedin.com/in/jozef-lewitzky-92976a213/">LinkedIn</a>
+            </p>
+            <p style="margin-top: 0.5rem; color: var(--text-muted);">© 2026 Jozef Lewitzky. Guelph, Ontario, Canada.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
